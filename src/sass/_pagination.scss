@@ -1,0 +1,121 @@
+.pagination__container {
+  display: flex;
+  justify-content: center;
+
+  & button {
+    position: relative;
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: background-color 300ms linear, fill 300ms linear;
+
+    padding: 0;
+    background-color: #f7f7f7;
+    border: none;
+    border-radius: 5px;
+    fill: #000000;
+
+    font-size: 30px;
+    cursor: alias;
+
+    &.on:hover,
+    &.on:focus {
+      fill: white;
+      background-color: #c70014;
+      cursor: pointer;
+    }
+
+    // & span {
+    //   position: absolute;
+    //   top: -5px;
+    //   left: 4px;
+    //   @include tablet {
+    //     left: 6px;
+    //     top: -2px;
+    //   }
+    // }
+
+    & svg {
+      width: 1em;
+      height: 1em;
+      scale: 0.6;
+    }
+
+    @include tablet {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
+
+.pagination__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 5px;
+  min-width: 200px;
+
+  & li:nth-child(-n + 2) {
+    display: none;
+  }
+  & li:nth-last-child(-n + 2) {
+    display: none;
+  }
+
+  @include tablet {
+    min-width: 294px;
+
+    & li:nth-child(-n + 2) {
+      display: flex;
+    }
+    & li:nth-last-child(-n + 2) {
+      display: flex;
+    }
+  }
+}
+
+.pagination__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-right: 5px;
+
+  transition: background-color 300ms linear, color 300ms linear;
+
+  width: 36px;
+  height: 36px;
+
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:last-child {
+    margin: 0;
+  }
+
+  @include tablet {
+    width: 40px;
+    height: 40px;
+    margin-right: 5px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.pagination__item--current {
+  color: #ffffff;
+  background-color: #ff6b08;
+}
+
+.pagination__on:hover,
+.pagination__on:focus {
+  color: white;
+  background-color: #ff6b08;
+  cursor: pointer;
+}
